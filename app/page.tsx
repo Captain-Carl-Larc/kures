@@ -39,7 +39,7 @@ const Home = () => {
       {users && (
         <ul>
           {users.map((user) => (
-            <li key={user.id}>{user.name}<span className='px-4'>{user.age}</span></li>
+            <li key={user.id} className='text-2xl font-semibold'>{user.name}<span className='px-4'>{user.age}</span></li>
           ))}
         </ul>
       )}
