@@ -1,14 +1,14 @@
 import { createClient } from '@supabase/supabase-js';
 
 // Use environment variables.  It's crucial to check if these are defined.
-const supabaseUrl = process.env.KURES_APP_SUPABASE_URL;
-const supabaseAnonKey = process.env.KURES_APP_SUPABASE_ANON_KEY;
+// 1.  Environment Variables (Correctly Prefixed)
+const supabaseUrl = process.env.NEXT_PUBLIC_KURES_APP_SUPABASE_URL;  // Correct Prefix
+const supabaseAnonKey = process.env.NEXT_PUBLIC_KURES_APP_SUPABASE_ANON_KEY; // Correct Prefix
 
 if (!supabaseUrl) {
   throw new Error('KURES_APP_SUPABASE_URL is not defined in the environment.');
 }
-console.log(supabaseUrl)
-console.log(supabaseAnonKey)
+
 console.log("supabaseAnonKey")
 if (!supabaseAnonKey) {
   throw new Error('KURES_APP_SUPABASE_ANON_KEY is not defined in the environment.');
