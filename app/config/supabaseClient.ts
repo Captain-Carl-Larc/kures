@@ -1,0 +1,21 @@
+import { createClient } from '@supabase/supabase-js';
+
+// Use environment variables.  It's crucial to check if these are defined.
+const supabaseUrl = process.env.KURES_APP_SUPABASE_URL;
+const supabaseAnonKey = process.env.KURES_APP_SUPABASE_ANON_KEY;
+
+if (!supabaseUrl) {
+  throw new Error('KURES_APP_SUPABASE_URL is not defined in the environment.');
+}
+console.log(supabaseUrl)
+console.log(supabaseAnonKey)
+console.log("supabaseAnonKey")
+if (!supabaseAnonKey) {
+  throw new Error('KURES_APP_SUPABASE_ANON_KEY is not defined in the environment.');
+}
+
+// Create the Supabase client.  The types are automatically inferred.
+const supabase = createClient(supabaseUrl, supabaseAnonKey);
+
+// Export the client for use in your application.
+export default supabase;
