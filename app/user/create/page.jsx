@@ -7,9 +7,36 @@ function createPost() {
     //states
     const [title,setTitle] = useState('')
     const [content, setContent] = useState('')
+    const [formError,setFormError] = useState(null)
 
-    const handleSubmit = async () =>{
+    
+    const handleSubmit = async (e) =>{
+        e.preventDefault()
+
+        //validate form
+        if (!title.trim() || !content.trim()) {
+            alert('Please enter a title and content')
+            return
+        }
+            //insert into the database
+            const { data, error } = await supabase
+                .from('stories')
+                .insert([{ title, content}])
+                .select()
+
+    if (error) {
+      console.log(error)
+      setFormError('Please fill in all the fields correctly.')
+    }
+    if (data) {
+      console.log(data)
+      setFormError(null)      
+    }
+        
+        //insert into the database
         console.log("submitted")
+        setTitle('')
+        setContent('')
     }
 
     return ( 
