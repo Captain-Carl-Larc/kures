@@ -9,7 +9,6 @@ if (!supabaseUrl) {
   throw new Error('KURES_APP_SUPABASE_URL is not defined in the environment.');
 }
 
-console.log("supabaseAnonKey")
 if (!supabaseAnonKey) {
   throw new Error('KURES_APP_SUPABASE_ANON_KEY is not defined in the environment.');
 }
