@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHouse,faGear,faUser,faCirclePlus,faBook } from '@fortawesome/free-solid-svg-icons'
+import { faHouse,faGear,faUser,faCirclePlus,faBook,faFolderOpen } from '@fortawesome/free-solid-svg-icons'
 
 function Dashboard() {
     return ( 
@@ -40,10 +40,25 @@ function Dashboard() {
                         </h4>
                     </div>               
                 </section>
-                <section id="show-dashboard-items" className='bg-blue-500 col-span-10 h-full'>
-                    <h2 className='font-bold text-3xl'>
-                        Items show here
-                    </h2>
+                <section id="show-dashboard-items" className='bg-blue-500 col-span-10  h-full'>
+                    <div className='flex flex-col h-screen'>
+                        <div id="stories-to-read" className='h-1/2 bg-red-700'>
+                            <h2>
+                                Stories to read appear here
+                            </h2>
+                        </div>
+                        <div id="you-stories" className='h-1/2 bg-green-700 flex flex-col justify-center items-center'>
+                            <h2>
+                                <FontAwesomeIcon icon={faFolderOpen} className='text-white h-8 w-8' />
+                            </h2>
+                            <p className="text-2xl font-semibold">
+                                Opps! You don't have any stories yet.
+                            </p>
+                            <button className="bg-blue-500 text-white px-4 py-2 rounded-md mt-4">
+                                Create
+                            </button>
+                        </div>
+                    </div>
                 </section>
             </div>
         </div>
