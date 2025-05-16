@@ -45,11 +45,14 @@ function readPost() {
             <p>{fetchingError}</p>
           )}
           {posts && (
-            <ul>
+            <div>
               {posts.map((post) => (
-                <li key={post.id}>{post.title}</li>
+                <div key={post.id} className="border-2 border-black p-4 m-2">
+                  <h2 className="font-bold text-xl">{post.title}</h2>
+                  <p>{post.content}</p>                  
+                </div>                
               ))}
-            </ul>
+            </div>
           )}
         </div>
      );
